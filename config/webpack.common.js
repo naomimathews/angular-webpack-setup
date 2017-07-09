@@ -12,7 +12,7 @@ module.exports = {
   },
 
   resolve: {
-    extensions: ['.ts', '.js'],
+    extensions: ['.ts', '.js', '.less'],
     alias: {
       variables: path.resolve('./src/assets/less/variables.less')
     }
@@ -45,12 +45,18 @@ module.exports = {
       // {
       //   test: /\.less/,
       //   include: helpers.root('src', 'app'),
-      //   use: ['raw-loader', 'css-loader', 'postcss-loader', 'less-loader']
+      //   loader: 'css-loader?localIdentName=[path]!postcss-loader!less-loader'
+      //   //use: ['raw-loader', 'css-loader', 'postcss-loader', 'less-loader']
+      // },
+      // {
+      //   test: /\.css$/,
+      //   include: helpers.root('src', 'app'),
+      //   use: ['raw-loader', 'css-loader', 'postcss-loader']
       // },
       {
-        test: /\.less$/,
+        test: /.less$/,
         include: helpers.root('src', 'app'),
-        use: ['style-loader', 'css-loader', 'postcss-loader', 'less-loader']
+        loader: 'raw-loader!postcss-loader!less-loader'
       }
     ]
   },
