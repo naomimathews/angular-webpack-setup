@@ -38,10 +38,15 @@ module.exports = {
         exclude: helpers.root('src', 'app'),
         loader: ExtractTextPlugin.extract({ fallbackLoader: 'style-loader', loader: 'css-loader?sourceMap' })
       },
+      // {
+      //   test: /\.less/,
+      //   include: helpers.root('src', 'app'),
+      //   use: ['raw-loader', 'css-loader', 'postcss-loader', 'less-loader']
+      // },
       {
-        test: /\.css$/,
+        test: /\.less$/,
         include: helpers.root('src', 'app'),
-        loader: 'raw-loader'
+        use: ['style-loader', 'css-loader', 'postcss-loader', 'less-loader']
       }
     ]
   },
