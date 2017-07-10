@@ -12,7 +12,7 @@ module.exports = {
   },
 
   resolve: {
-    extensions: ['.ts', '.js', '.less'],
+    extensions: ['.ts', '.js', '.less', '.json'],
     alias: {
       variables: path.resolve('./src/assets/less/variables.less')
     }
@@ -40,19 +40,8 @@ module.exports = {
       {
         test: /\.css$/,
         exclude: helpers.root('src', 'app'),
-        loader: ExtractTextPlugin.extract({ fallbackLoader: 'style-loader', loader: 'css-loader?sourceMap' })
+        loader: ExtractTextPlugin.extract({ fallback: 'style-loader', loader: 'css-loader?sourceMap' })
       },
-      // {
-      //   test: /\.less/,
-      //   include: helpers.root('src', 'app'),
-      //   loader: 'css-loader?localIdentName=[path]!postcss-loader!less-loader'
-      //   //use: ['raw-loader', 'css-loader', 'postcss-loader', 'less-loader']
-      // },
-      // {
-      //   test: /\.css$/,
-      //   include: helpers.root('src', 'app'),
-      //   use: ['raw-loader', 'css-loader', 'postcss-loader']
-      // },
       {
         test: /.less$/,
         include: helpers.root('src', 'app'),

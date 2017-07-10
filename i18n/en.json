@@ -1,0 +1,15 @@
+{
+  "common":{
+    "district": "district",
+    "groupBuy": "group buy",
+    "quickBuy": "quick buy",
+    "addToCart": "add to cart",
+    "viewMore": "view more",
+    "seeAll": "see all"
+  },
+  "header":{
+    "login": "login/signup",
+    "cart": "cart",
+    "districts":"districts"
+  }
+}
